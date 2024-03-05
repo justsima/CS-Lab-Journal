@@ -1,4 +1,4 @@
-Lab 3.1b: Packet Analysis using Wireshark
+Lab 4: Packet Analysis using Wireshark
 
 Introduction:
 Packet analysis, also known as packet sniffing or protocol analysis, is the process of capturing and interpreting live data as it flows across a network to better understand what is happening on that network. In this lab, we used Wireshark, a popular packet sniffer tool, to capture and analyze network packets.
