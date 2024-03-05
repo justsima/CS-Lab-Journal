@@ -1,0 +1,29 @@
+Lab 3.1b: Packet Analysis using Wireshark
+
+Introduction:
+Packet analysis, also known as packet sniffing or protocol analysis, is the process of capturing and interpreting live data as it flows across a network to better understand what is happening on that network. In this lab, we used Wireshark, a popular packet sniffer tool, to capture and analyze network packets.
+
+Goals:
+
+Understanding network characteristics
+Learning who is on a network
+Determining who or what is utilizing available bandwidth
+Identifying peak network usage times
+Identifying possible attacks or malicious activity
+Finding unsecured and bloated applications
+Capturing Packets:
+To capture packets using Wireshark, you need to have proper permissions on your computer to put Wireshark into promiscuous mode. In a Windows system, this usually means you have administrator access, while in a Linux system, it usually means that you have root access.
+
+To start capturing packets, select the network interface from the "Capture Options" window and click the "Start" button. As the capture begins, you can view the packets that appear on the screen. You can also apply filters to view specific packets of interest. In Wireshark, filters use key phrases such as "ip.src", "tcp.port", and "http.request".
+
+Example: To filter by source IP address, enter "ip.src == 10.0.0.1" in the display filter window.
+
+Wireshark in GNS3:
+To capture packets directly from GNS3, right-click on the link you want to capture on and select "Start capture". Accept the default in the dialog box that opens up or customize it as appropriate. In our activity, we configured R1 with an IP address of 10.0.0.1 on its Fa0/0 interface and R2 with an IP address of 10.0.0.2 on its Fa0/0 interface. We also configured a VTY password of "cisco" on R2 along with an enable secret of "cisco".
+
+To generate some packets between R1 and R2, we opened a telnet connection from R1 to R2. In Wireshark, we could see packets related to the telnet session, such as ARP, TCP, and Telnet. We could also see the encapsulation of the TCP data in an IP packet, which is further encapsulated in an Ethernet frame before being sent out on the wire.
+
+Example: To follow the TCP stream, right-click on a TCP packet and select "Follow TCP Stream".
+
+Conclusion:
+Packet analysis is a powerful technique for understanding network behavior and identifying potential security threats. In this lab, we used Wireshark to capture and analyze network packets, gaining insights into network characteristics, bandwidth utilization, and possible attacks. By following the TCP stream, we could see the details of the conversation between devices, including source and destination IP addresses, ports, and sequence numbers. Overall, Wireshark is an essential tool for network administrators, security analysts, and anyone interested in understanding network traffic.
